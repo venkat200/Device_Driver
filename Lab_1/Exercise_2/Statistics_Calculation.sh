@@ -77,6 +77,49 @@ StandardDeviation()
 
 } <"$dataFile"	# rewinds data file to the function
 
+# function to compute median
+Median() 
+{
+	# load data points from file to dataPoints array
+	index=0
+	while read value 
+	do
+	  dataPoints[$index]="$value"
+	  index=$((index+1))
+	done
+
+	# sort the array using bubble sort
+	((i=countOfDataPoints-1))
+	while ((i>0)); 
+	do
+	  j=0
+	  while ((j<i)); 
+	  do
+	    if ((dataPoints[j]>dataPoints[j+1]));
+	    then  
+	    	((temp=dataPoints[j]))
+	      ((dataPoints[j]=dataPoints[j+1]))
+	      ((dataPoints[j+1]=temp))
+	    fi
+	    ((++j))
+	  done
+	  ((--i))
+	done
+
+	local median=0
+
+	# Compute the median from sorted array
+	((mid = countOfDataPoints/2))
+	if ((countOfDataPoints  % 2 == 0)); 
+	then
+	  ((median = (dataPoints[mid] + dataPoints[mid-1]) / 2))
+	else
+	  ((median = dataPoints[mid]))
+	fi
+
+	echo $median
+
+} <"$dataFile"	# rewinds data file to the function
 
 
 # Mean() function returns two values
@@ -85,11 +128,14 @@ mean=$(Mean); countOfDataPoints=$?
 standard_deviation=$(StandardDeviation $mean $countOfDataPoints)
 variance=$(echo "scale=$scale_decimalPrecision; $standard_deviation * $standard_deviation" | bc)  
 
+median=$(Median)
+
 echo
 echo "Statistics calculation from $dataFile file"
 echo
 echo "Number of Data Points = $countOfDataPoints"
 echo "Mean (Average)        = $mean"
+echo "Median                = $median"
 echo "Variance              = $variance"
 echo "Standard Deviation    = $standard_deviation"
 echo
