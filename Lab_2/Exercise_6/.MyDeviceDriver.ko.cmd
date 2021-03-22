@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/Desktop/Exercise_6/MyDeviceDriver.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id=sha1  -T ./scripts/module-common.lds -o /home/ubuntu/Desktop/Exercise_6/MyDeviceDriver.ko /home/ubuntu/Desktop/Exercise_6/MyDeviceDriver.o /home/ubuntu/Desktop/Exercise_6/MyDeviceDriver.mod.o;  true

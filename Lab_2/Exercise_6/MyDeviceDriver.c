@@ -2,7 +2,7 @@
 #include <linux/moduleparam.h>
 #include <linux/init.h>
 #include <linux/stat.h>
-#include <fs.h>
+#include <linux/fs.h>
 
 
 MODULE_LICENSE("My Device Driver Module");
