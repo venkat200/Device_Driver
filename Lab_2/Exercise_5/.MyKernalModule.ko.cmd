@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/Desktop/Folder/MyKernalModule.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id=sha1  -T ./scripts/module-common.lds -o /home/ubuntu/Desktop/Folder/MyKernalModule.ko /home/ubuntu/Desktop/Folder/MyKernalModule.o /home/ubuntu/Desktop/Folder/MyKernalModule.mod.o;  true
