@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/Final_Exam_Practice/1_b/MyKernelModule.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id=sha1  -T ./scripts/module-common.lds -o /home/ubuntu/Final_Exam_Practice/1_b/MyKernelModule.ko /home/ubuntu/Final_Exam_Practice/1_b/MyKernelModule.o /home/ubuntu/Final_Exam_Practice/1_b/MyKernelModule.mod.o;  true

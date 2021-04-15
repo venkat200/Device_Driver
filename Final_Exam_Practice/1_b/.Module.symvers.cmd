@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/Final_Exam_Practice/1_b/Module.symvers := sed 's/ko$$/o/' /home/ubuntu/Final_Exam_Practice/1_b/modules.order | scripts/mod/modpost -m -a   -o /home/ubuntu/Final_Exam_Practice/1_b/Module.symvers -e -i Module.symvers   -T -
